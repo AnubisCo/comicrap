@@ -1,6 +1,11 @@
 runtime: go114
 env: standard
 
+handlers:
+- url: /.*
+  script: auto
+  
+
 manual_scaling:
   instances: 1
 resources:
