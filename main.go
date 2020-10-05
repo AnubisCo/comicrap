@@ -1,17 +1,35 @@
 package main
 
 import (
-	"fmt"
-	"log"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 	"net/http"
 )
 
-func handle(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(w, "<h1>hello world!</h1>")
+// Data contains a pointer to the database
+type Data struct {
+	DB *gorm.DB
+}
+
+// func (d *Data) Initialize(dbDriver string, dbURI string) {
+// 	db, err := gorm.Open(dbDriver, dbURI)
+// 	if err != nil {
+// 		panic("failed to connect database")
+// 	}
+
+// 	d.DB = db
+
+// 	d.DB.AutoMigrate(&Admin{})
+// }
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	w.Write([]byte("hello world!"))
 }
 
 func main() {
-	http.HandleFunc("/", handle)
-
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	http.HandleFunc("/", handler)
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		panic(err)
+	}
 }
