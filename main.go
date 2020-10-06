@@ -11,16 +11,17 @@ type Data struct {
 	DB *gorm.DB
 }
 
-// func (d *Data) Initialize(dbDriver string, dbURI string) {
-// 	db, err := gorm.Open(dbDriver, dbURI)
-// 	if err != nil {
-// 		panic("failed to connect database")
-// 	}
+// Initialize - connects with the db
+func (d *Data) Initialize(dbDriver string, dbURI string) {
+	db, err := gorm.Open(dbDriver, dbURI)
+	if err != nil {
+		panic("failed to connect database")
+	}
 
-// 	d.DB = db
+	d.DB = db
 
-// 	d.DB.AutoMigrate(&Admin{})
-// }
+	d.DB.AutoMigrate(&Admin{})
+}
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
