@@ -1,27 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import line from "./../line.png";
+import './components.css';
 
 class Nav extends React.Component {
     render() {
-        return(
+        return (
             <div>
-                <ul>
-                    <li>
-                        <Link to="/news">news</Link>
-                    </li>
-                    <li>
-                        <Link to="/creators">creators</Link>
-                    </li>
-                    <li>
-                        <Link to="/">logo</Link>
-                    </li>
-                    <li>
-                        <Link to="/comics">comics</Link>
-                    </li>
-                    <li>
-                        <Link to="/merch">merch</Link>
-                    </li>
-                </ul>
+                <img alt="a line" style={{ position: "sticky", bottom: "0", padding: "0", margin: "0", width: "100vw" }} src={line} />
+                <div className="">
+                    <ul className="nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/news">news</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/creators">creators</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">logo</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/comics">comics</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/merch">merch</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
         );
     }

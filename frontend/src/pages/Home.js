@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from "./../components/Nav"
-import line from "./../line.png";
 
 class Home extends React.Component {
     render() {
@@ -10,7 +9,6 @@ class Home extends React.Component {
                     <h1 style={{ color: "white", paddingTop: "30vh", margin: "0" }}>
                         Comics are made.<br /> Together.
                     </h1>
-                    <img alt="a line" style={{ position: "absolute", bottom: "0", padding: "0", margin: "0", width: "100vw" }} src={line} />
                 </div>
                 <Nav />
                 <div>
@@ -20,6 +18,11 @@ class Home extends React.Component {
                         <input
                             type="text"
                             name="username"
+                        />
+                        <p>password:</p>
+                        <input
+                            type="text"
+                            name="password"
                         />
                     </form>
                 </div>
