@@ -1,12 +1,21 @@
 import React from "react";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
 
-class Login extends React.Component(props) {
-  render() {
+function Login() {
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
+    <>
+      <button onClick={handleShow}>
+        open
+      </button>
       <Modal
-        {...props}
+        show={show}
+        onHide={handleClose}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -25,11 +34,11 @@ class Login extends React.Component(props) {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <button onClick={handleClose}>Close</button>
         </Modal.Footer>
       </Modal>
-    );
-  }
+    </>
+  );
 }
 
 export default Login;
