@@ -14,24 +14,24 @@ class App extends React.Component {
       <>
         <Router>
           <Switch>
-            <Route path="/news">
+            <Route path="/comics">
               <Nav />
-              <News />
+              <Comics />
             </Route>
             <Route path="/creators">
               <Nav />
               <Creators />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-            <Route path="/comics">
+            <Route path="/news">
               <Nav />
-              <Comics />
+              <News />
             </Route>
             <Route path="/merch">
               <Nav />
               <Merch />
+            </Route>
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
         </Router>
