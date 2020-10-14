@@ -1,8 +1,8 @@
-.logo {
-    height: 4rem;
+Nav {
+    font-size: 1.5rem;
 }
-.nav-item {
-    height: 4rem;
+.logo {
+    max-width: 100%;
 }
 .nav-link {
     color: black;
