@@ -1,8 +1,12 @@
 import React from 'react';
 import Nav from "./../components/Nav"
+import Login from "./../components/Login"
+import Button from 'react-bootstrap/Button';
 
-class Home extends React.Component {
+class Home extends React.Component{
+    constructor(props) {}
     render() {
+        const[modalShow, setModalShow] = React.useState(false);
         return (
             <div style={{ overflow: "hidden" }}>
                 <div style={{ position: "relative", backgroundColor: "black", height: "60vh", padding: "0", margin: "0" }}>
@@ -14,19 +18,13 @@ class Home extends React.Component {
                 </div>
                 <Nav />
                 <div>
-                    <form>
-                        <h1>login</h1>
-                        <p>username:</p>
-                        <input
-                            type="text"
-                            name="username"
-                        />
-                        <p>password:</p>
-                        <input
-                            type="text"
-                            name="password"
-                        />
-                    </form>
+                    <Button variant="primary" onClick={() => setModalShow(true)}>
+                        Login
+                    </Button>
+                    <Login
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    />
                 </div>
             </div>
         );
