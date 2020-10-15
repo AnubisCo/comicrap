@@ -1,48 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import line from "./../img/line.png";
-import logo from "./../img/logo.png";
+// import logo from "./../img/logo.png";
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { AppBar, Fab, makeStyles, Toolbar, useScrollTrigger, Zoom } from '@material-ui/core/';
 import './Nav.css';
 
-class Nav extends React.Component {
-    render() {
-        return (
-            <div className="shadow-lg" style={{ position: "sticky" }}>
-                <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
-                <nav className="navbar-expand-sm container-fluid" style={{ width: "100vw", paddingTop: "1vh", paddingBottom: "0.5vh" }}>
-                    <ul className="nav align-items-center">
-                        <li>
-                            <Collapse isActive={true} />
-                        </li>
-                        <li className="nav-item col">
-                            <Link className="navbar-link" to="/">
-                                <img className="logo" alt="logo" src={logo} />
-                            </Link>
-                        </li>
-                        {["news", "creators", "comics", "merch"].map((s) =>
-                            <li className="nav-item col" key={s}>
-                                <Link className="nav-link" to={"/" + s}>{s}</Link>
-                            </li>
-                        )}
-                    </ul>
-                </nav>
-            </div>
-        );
-    }
+const useStyles = makeStyles((theme) => ({
+    root: {
+        position: 'fixed',
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+    },
+}));
+
+export default function Nav(props) {
+    return (
+        <AppBar position="sticky" className="shadow-lg">
+            <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
+            <Toolbar>
+
+            </Toolbar>
+            <ScrollTop {...props}>
+                <Fab color="secondary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUpIcon />
+                </Fab>
+            </ScrollTop>
+        </AppBar>
+    );
 }
 
-class Collapse extends React.Component {
-    constructor(props) {
-        super(props)
-        this.isActive = props.isActive;
+function ScrollTop(props) {
+    const { children, window } = props;
+    const classes = useStyles();
+    const trigger = useScrollTrigger({
+        target: window ? window() : undefined,
+        disableHysteresis: true,
+        threshold: 100
+    });
+
+    const handleClick = (event) => {
+        const anchor = (event.target.ownerDocument || document).querySelector("#top");
+
+        if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
     }
 
-    render() {
-        return (
-            <div>
-
+    return (
+        <Zoom in={trigger}>
+            <div onClick={handleClick} role="presentation" className={classes.root}>
+                {children}
             </div>
-        )
-    }
+        </Zoom>
+    );
 }
-export default Nav;
