@@ -14,9 +14,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <Nav />
-                <div>
-                    <Login />
-                </div>
+                <Login />
                 <div style={{ height: "100vh" }}>
 
                 </div>
