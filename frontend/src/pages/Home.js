@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from "./../components/Nav"
 import Login from "./../components/Login"
+import Feat from "./../components/Feat"
 
 class Home extends React.Component {
     render() {
@@ -15,8 +16,8 @@ class Home extends React.Component {
                 </div>
                 <Nav />
                 <Login />
+                <Feat />
                 <div style={{ height: "100vh" }}>
-
                 </div>
             </div>
         );
