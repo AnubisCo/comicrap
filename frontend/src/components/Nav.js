@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Nav(props) {
     return (
-        <AppBar position="sticky" className="shadow-lg">
+        <AppBar position="sticky" className="shadow-lg" style={{ zIndex: "1" }}>
             <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
             <Toolbar>
 
