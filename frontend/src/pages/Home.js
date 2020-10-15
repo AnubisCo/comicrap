@@ -16,6 +16,9 @@ class Home extends React.Component {
                 </div>
                 <Nav />
                 <Login />
+                <div style={{margin: 100}}>
+                    <h2> <b> Featured </b></h2>
+                </div>
                 <Feat />
                 <div style={{ height: "100vh" }}>
                 </div>

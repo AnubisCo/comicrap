@@ -12,6 +12,7 @@ const styles = {
     padding: 15,
     margin: 100,
     minHeight: 400,
+    minWidth: 400,
     color: '#fff',
   },
   slide1: {
