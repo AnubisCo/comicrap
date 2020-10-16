@@ -7,7 +7,12 @@ import { AppBar, Fab, makeStyles, Toolbar, useScrollTrigger, Zoom } from '@mater
 import './Nav.css';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    stuck: {
+        position: 'fixed',
+        top: "0",
+        width: "100vw"
+    },
+    button: {
         position: 'fixed',
         bottom: theme.spacing(2),
         right: theme.spacing(2),
@@ -15,11 +20,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Nav(props) {
-    return (
-        <AppBar position="sticky" className="shadow-lg" style={{ zIndex: "1" }}>
-            <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
-            <Toolbar>
+    const [pos, setPos] = React.useState(0)
 
+    
+    return (
+        <AppBar position="relative" className="shadow-lg" style={{ zIndex: "1" }}>
+            <Toolbar>
+                <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
+                Hello world
             </Toolbar>
             <ScrollTop {...props}>
                 <Fab color="secondary" size="small" aria-label="scroll back to top">
@@ -49,7 +57,7 @@ function ScrollTop(props) {
 
     return (
         <Zoom in={trigger}>
-            <div onClick={handleClick} role="presentation" className={classes.root}>
+            <div onClick={handleClick} role="presentation" className={classes.button}>
                 {children}
             </div>
         </Zoom>
