@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { Link } from "react-router-dom";
 import line from "./../img/line.png";
 // import logo from "./../img/logo.png";
@@ -7,9 +7,13 @@ import { AppBar, Fab, makeStyles, Toolbar, useScrollTrigger, Zoom } from '@mater
 import './Nav.css';
 
 const useStyles = makeStyles((theme) => ({
-    stuck: {
-        position: 'fixed',
+    stickyWrapper: {
+        position: "relative"
+    },
+    sticky: {
+        position: "fixed",
         top: "0",
+        zIndex: "1000",
         width: "100vw"
     },
     button: {
@@ -19,16 +23,36 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Nav(props) {
-    const [pos, setPos] = React.useState(0)
-
-    
+function Sticky() {
     return (
-        <AppBar position="relative" className="shadow-lg" style={{ zIndex: "1" }}>
-            <Toolbar>
-                <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
+        <Toolbar>
+            <img alt="a line" style={{ position: "absolute", top: "0", padding: "0", margin: "0", width: "100vw", height: "0.5vh" }} src={line} />
                 Hello world
-            </Toolbar>
+        </Toolbar>
+    );
+}
+
+export default function Nav(props) {
+    const classes = useStyles();
+    const [isSticky, setSticky] = React.useState(false);
+    const ref = React.useRef(null);
+    const handleScroll = () => {
+        if (ref.current) {
+            setSticky(ref.current.getBoundingClientRect() <= 0)
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", () => handleScroll)
+        };
+    }, []);
+
+    return (
+        <AppBar className={"shadow-lg " + classes.stickyWrapper + (isSticky ? " sticky" : "")} ref={ref}>
+            <Sticky />
             <ScrollTop {...props}>
                 <Fab color="secondary" size="small" aria-label="scroll back to top">
                     <KeyboardArrowUpIcon />
