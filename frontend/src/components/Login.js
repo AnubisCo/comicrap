@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'; 
+import Button from 'react-bootstrap/Button';
 import ModalHeader from "react-bootstrap/esm/ModalHeader";
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <div>
       <button onClick={handleShow}>
         open
       </button>
@@ -49,7 +49,7 @@ function Login() {
           Don't have an account? Click here to create one!
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 
