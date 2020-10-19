@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     sticky: {
         position: "fixed",
         top: "0",
-        zIndex: "1000",
+        zIndex: "100",
         width: "100vw"
     },
     button: {
