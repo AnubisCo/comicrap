@@ -2,13 +2,14 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import line from "./../img/line.png";
 import logo from "./../img/logo.png";
+import Login from "./Login";
 import './Nav.css';
 
 function Nav(props) {
-    const [isNavVisible, setIsNavVisible] = React.useState(true);
-    const [isSmallScreen, setIsSmallScreen] = React.useState(false);
+    const [isNavVisible, setIsNavVisible] = React.useState(false);
+    const [isSmallScreen, setIsSmallScreen] = React.useState(true);
 
-    const handleMediaQueryChange = mediaQuery => {
+    const handleMediaQueryChange = (mediaQuery) => {
         if (mediaQuery.matches) {
             setIsSmallScreen(true);
         } else {
@@ -18,13 +19,14 @@ function Nav(props) {
 
     React.useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 700px)");
-        mediaQuery.addEventListener(handleMediaQueryChange);
-        handleMediaQueryChange(mediaQuery)
+        mediaQuery.addEventListener("change", handleMediaQueryChange);
+        handleMediaQueryChange(mediaQuery);
 
         return () => {
-            mediaQuery.removeEventListener(handleMediaQueryChange);
+            mediaQuery.removeEventListener("change", handleMediaQueryChange);
+            handleMediaQueryChange(mediaQuery)
         };
-    }, []);
+    }, [isSmallScreen]);
 
     const toggleNav = () => {
         setIsNavVisible(!isNavVisible);
@@ -40,7 +42,7 @@ function Nav(props) {
                     <a href="/">creators</a>
                     <a href="/">comics</a>
                     <a href="/">market</a>
-                    <button className="account">login</button>
+                    <Login />
                 </nav>
             )}
             <div className="toggleDiv">
