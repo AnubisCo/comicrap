@@ -1,4 +1,5 @@
 import React from "react";
+import { Squeeze as Hamburger } from "hamburger-react";
 // import { Link } from "react-router-dom";
 import line from "./../img/line.png";
 import logo from "./../img/logo.png";
@@ -28,9 +29,9 @@ function Nav(props) {
         };
     }, [isSmallScreen]);
 
-    const toggleNav = () => {
-        setIsNavVisible(!isNavVisible);
-    };
+    // const toggleNav = () => {
+    //     setIsNavVisible(!isNavVisible);
+    // };
 
     return (
         <header className="header pb-3">
@@ -46,9 +47,7 @@ function Nav(props) {
                 </nav>
             )}
             <div className="toggleDiv">
-                <button onClick={toggleNav}>
-                    toggle
-                </button>
+                <Hamburger size={48} label="menu toggle" toggled={isNavVisible} toggle={setIsNavVisible} />
             </div>
         </header>
     );

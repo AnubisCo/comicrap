@@ -39,16 +39,12 @@
         grid-row-gap: 20px;
     }
     .toggleDiv {
-        position: relative;
+        position: absolute!important;
+        right: 10px;
+        top: 1rem;
         grid-area: toggleDiv;
         margin-top: 10px;
         display: block;
-    }
-    .toggleDiv > button {
-        position: absolute;
-        height: 3rem;
-        right: 0;
-        top: 1rem;
     }
     .account {
         display: none;
