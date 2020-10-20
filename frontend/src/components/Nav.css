@@ -17,10 +17,11 @@
 }
 .header {
     position: relative;
+    top: 0;
     display: grid;
     grid-template-areas: "logo nav";
 }
-.toggleNav {
+.toggleDiv {
     display: none;
 }
 .account {
@@ -30,14 +31,26 @@
 
 @media (max-width: 700px) {
     .header {
-        grid-template-areas: "toggleNav logo account" "nav nav";
+        grid-template-areas: "logo toggleDiv" "nav nav";
     }
     .nav {
         grid-template-rows: repeat(4, auto);
         grid-template-columns: none;
         grid-row-gap: 20px;
     }
-    .toggleNav {
+    .toggleDiv {
+        position: relative;
+        grid-area: toggleDiv;
+        margin-top: 10px;
         display: block;
+    }
+    .toggleDiv > button {
+        position: absolute;
+        height: 3rem;
+        right: 0;
+        top: 1rem;
+    }
+    .account {
+        display: none;
     }
 }
