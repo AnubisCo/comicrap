@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from "./../components/Nav"
-import Login from "./../components/Login"
 import Feat from "./../components/Feat"
 
 class Home extends React.Component {

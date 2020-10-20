@@ -3,6 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ModalHeader from "react-bootstrap/esm/ModalHeader";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import './Nav.css';
 
 function Login() {
   const [show, setShow] = React.useState(false);
@@ -12,9 +14,7 @@ function Login() {
 
   return (
     <div>
-      <button onClick={handleShow}>
-        open
-      </button>
+      <AccountCircleIcon style={{ fontSize: "2rem" }} className="nav-icon account" onClick={handleShow} />
       <Modal
         show={show}
         onHide={handleClose}
