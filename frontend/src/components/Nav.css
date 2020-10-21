@@ -1,5 +1,6 @@
 .navbar-sticky {
   position: fixed!important;
+  z-index: 100;
   top: 0;
   left: 0;
 }

@@ -43,22 +43,22 @@ function Navbar(props) {
             {(!isSmallScreen || isNavVisible) && (
                 <nav className="nav my-auto">
                     <a href="/news">
-                        <Button variant="contained" color="primary" startIcon={<Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        <Button color="primary" startIcon={<Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
                             news
                         </Button>
                     </a>
                     <a href="/creators">
-                        <Button variant="contained" color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        <Button color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
                             creators
                         </Button>
                     </a>
                     <a href="/comics">
-                        <Button variant="contained" color="primary" startIcon={<MenuBook className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        <Button color="primary" startIcon={<MenuBook className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
                             comics
                         </Button>
                     </a>
                     <a href="/merch">
-                        <Button variant="contained" color="primary" startIcon={<Storefront className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        <Button color="primary" startIcon={<Storefront className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
                             market
                         </Button>
                     </a>
