@@ -1,31 +1,11 @@
 .navbar-sticky {
-  background: #333;
-  position: fixed;
+  position: fixed!important;
   top: 0;
   left: 0;
-  box-shadow: 1px 1px 1px #222;
-  animation: moveDown 0.5s ease-in-out;
 }
-@keyframes moveDown {
-  from {
-    transform: translateY(-5rem);
-  }
-  to {
-    transform: translateY(0rem);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotateY(360deg);
-  }
-  100% {
-    transform: rotateY(0rem);
-  }
-}
-.nav-icon {
-    color: black;
-}
+/* .nav-icon {
+    
+} */
 .nav-icon:hover {
     cursor: pointer;
 }
@@ -51,22 +31,15 @@
     text-decoration: none;
     color: black;
 }
-.nav > a:hover, .account:hover {
-    border-bottom: solid black 1px;
-    box-shadow: 0rem 0.05rem 0.25rem black;
-}
 .header {
+    background-color: white;
     position: relative;
-    top: 0;
+    width: 100%;
     display: grid;
     grid-template-areas: "logo nav";
 }
 .toggleDiv {
     display: none;
-}
-.account {
-    height: 100%;
-    width: 100%;
 }
 
 @media (max-width: 800px) {

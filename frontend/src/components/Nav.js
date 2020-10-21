@@ -1,12 +1,28 @@
-import React from "react";
-import useSticky from "./hooks/useSticky";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import './Nav.css';
 
 function Nav(props) {
-    const { isSticky, element } = useSticky();
+    const [isSticky, setSticky] = React.useState(false);
+    const ref = React.useRef(null);
+    const handleScroll = () => {
+        if (ref.current) {
+            setSticky(ref.current.getBoundingClientRect().top <= 0);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", () => handleScroll);
+        }
+    }, []);
+
     return (
-        <Navbar sticky={isSticky} />
+        <header ref={ref} className={isSticky ? "navbar-sticky header mb-3" : "header mb-3"}>
+            <Navbar />
+        </header>
     );
 }
 

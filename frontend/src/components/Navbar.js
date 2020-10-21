@@ -1,12 +1,13 @@
 import React from "react";
 import { Squeeze as Hamburger } from "hamburger-react";
+import Button from "@material-ui/core/Button";
 import { Announcement, Group, MenuBook, Storefront } from '@material-ui/icons';
 import line from "./../img/line.png";
 import logo from "./../img/logo.png";
 import Login from "./Login";
 import "./Nav.css"
 
-function Navbar({ sticky }) {
+function Navbar(props) {
     const [isNavVisible, setIsNavVisible] = React.useState(false);
     const [isSmallScreen, setIsSmallScreen] = React.useState(true);
     const handleMediaQueryChange = (mediaQuery) => {
@@ -36,22 +37,30 @@ function Navbar({ sticky }) {
     );
 
     return (
-        <header className={sticky ? "navbar-sticky header mb-3" : "header mb-3"}>
+        <>
             <img src={line} className="line" alt="line" />
             <Logo href="/" src={logo} class="logo" alt="logo" />
             {(!isSmallScreen || isNavVisible) && (
                 <nav className="nav my-auto">
                     <a href="/news">
-                        news <Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />
+                        <Button variant="contained" color="primary" startIcon={<Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                            news
+                        </Button>
                     </a>
                     <a href="/creators">
-                        creators <Group className="nav-icon" style={{ fontSize: "1.5rem" }} />
+                        <Button variant="contained" color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                            creators
+                        </Button>
                     </a>
                     <a href="/comics">
-                        comics <MenuBook className="nav-icon" style={{ fontSize: "1.5rem" }} />
+                        <Button variant="contained" color="primary" startIcon={<MenuBook className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                            comics
+                        </Button>
                     </a>
                     <a href="/merch">
-                        market <Storefront className="nav-icon" style={{ fontSize: "1.5rem" }} />
+                        <Button variant="contained" color="primary" startIcon={<Storefront className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                            market
+                        </Button>
                     </a>
                     <Login />
                 </nav>
@@ -59,7 +68,7 @@ function Navbar({ sticky }) {
             <div className="toggleDiv py-2">
                 <Hamburger size={30} label="menu toggle" toggled={isNavVisible} toggle={setIsNavVisible} />
             </div>
-        </header>
+        </>
     );
 }
 export default Navbar;
