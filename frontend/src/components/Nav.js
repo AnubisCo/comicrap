@@ -20,7 +20,7 @@ function Nav(props) {
     }, []);
 
     return (
-        <header ref={ref} className={isSticky ? "navbar-sticky header mb-3" : "header mb-3"}>
+        <header ref={ref} className={isSticky ? "navbar-sticky header mb-3 pl-2" : "header mb-3 pl-2"}>
             <Navbar />
         </header>
     );
