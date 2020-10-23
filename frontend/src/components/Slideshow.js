@@ -1,3 +1,4 @@
+import { PinDropSharp } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
 import "./Slideshow.css"
 
@@ -44,7 +45,7 @@ export default function Slideshow({ images = [], interval = 3000 }) {
                     <div style={currentSlideStyle} className="slide-thumbnail"></div>
                 </section>
             </div>
-            <div className="slideshow-controller">
+            <div className={PinDropSharp.isHome ? "slideshow-controller" : ""}>
                 <span onClick={previous}>Previous</span>
                 <span onClick={next}>Next</span>
             </div>

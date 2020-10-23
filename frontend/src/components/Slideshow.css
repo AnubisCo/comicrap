@@ -1,5 +1,7 @@
 section.slideshow{
     width: 100%;
+    position: absolute;
+    z-index: 0;
 }
 section.slideshow div.slide-holder{
     display: flex;

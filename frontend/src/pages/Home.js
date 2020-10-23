@@ -16,8 +16,8 @@ function HomeDisplay(props) {
     return (
         <div id="top" style={{ position: "relative", height: "60vh", padding: "0", margin: "0" }}>
             <Slideshow interval={2000} images={imgs} />
-            <div className="container">
-                <h1 style={{ color: "white", paddingTop: "30vh", margin: "0" }}>
+            <div className="container" style={{ zIndex: "10", }}>
+                <h1 style={{ color: "black", paddingTop: "30vh", margin: "0" }}>
                     <Typist>
                         <Typist.Delay ms={1000} />
                         Comics are made.
