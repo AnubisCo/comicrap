@@ -1,8 +1,7 @@
-import { PinDropSharp } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
-import "./Slideshow.css"
+import "./Slideshow.css";
 
-export default function Slideshow({ images = [], interval = 3000 }) {
+export default function Slideshow({ images = [], interval = 3000, isHome = true }) {
     const [thumbnails, setThumnails] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentSlideStyle, setCurrentSlideStyle] = useState({});
@@ -10,7 +9,7 @@ export default function Slideshow({ images = [], interval = 3000 }) {
     useEffect(() => {
         setThumnails(images);
         setCurrentSlideStyle({
-            backgroundImage: "url('"+ images[currentSlide] + "')"
+            backgroundImage: "url('" + images[currentSlide] + "')"
         });
         const loop = setInterval(() => {
             if (currentSlide === images.length - 1) {
@@ -45,7 +44,7 @@ export default function Slideshow({ images = [], interval = 3000 }) {
                     <div style={currentSlideStyle} className="slide-thumbnail"></div>
                 </section>
             </div>
-            <div className={PinDropSharp.isHome ? "slideshow-controller" : ""}>
+            <div className={isHome ? "invis" : "slideshow-controller"}>
                 <span onClick={previous}>Previous</span>
                 <span onClick={next}>Next</span>
             </div>

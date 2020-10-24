@@ -1,12 +1,10 @@
 .navbar-sticky {
   position: fixed!important;
+  box-shadow: 0.01rem 0.01rem 0.5rem black;
   z-index: 100;
   top: 0;
   left: 0;
 }
-/* .nav-icon {
-    
-} */
 .nav-icon:hover {
     cursor: pointer;
 }

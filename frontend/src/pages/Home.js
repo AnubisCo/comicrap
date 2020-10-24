@@ -9,15 +9,18 @@ import Feat from "./../components/Feat";
 import img1 from "./../img/slide_1.jpg";
 import img2 from "./../img/slide_2.jpg";
 import img3 from "./../img/slide_3.jpg";
+import img4 from "./../img/slide_4.jpg";
+import img5 from "./../img/slide_5.jpg";
 
-const imgs = [img1, img2, img3];
+const imgs = [img1, img2, img3, img4, img5];
 
 function HomeDisplay(props) {
     return (
-        <div id="top" style={{ position: "relative", height: "60vh", padding: "0", margin: "0" }}>
-            <Slideshow interval={2000} images={imgs} />
+        <div id="top" style={{ position: "relative", height: "60vh", padding: "0", margin: "0", backgroundColor: "black", zIndex: "-2" }}>
+            <Slideshow images={imgs} />
+            <div style={{ position: "absolute", height: "100%", width: "100%", backgroundColor: "black", zIndex: "-1", opacity: "0.7" }}></div>
             <div className="container" style={{ zIndex: "10", }}>
-                <h1 style={{ color: "black", paddingTop: "30vh", margin: "0" }}>
+                <h1 style={{ color: "white", paddingTop: "30vh", margin: "0" }}>
                     <Typist>
                         <Typist.Delay ms={1000} />
                         Comics are made.
