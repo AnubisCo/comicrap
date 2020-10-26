@@ -26,7 +26,9 @@ function Login() {
         centered
       >
         <Modal.Body>
-          <ModalHeader> <h4>Login</h4> </ModalHeader>
+          <ModalHeader>
+            <h4 style={{ textAlign: "center" }}>Login</h4>
+          </ModalHeader>
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
