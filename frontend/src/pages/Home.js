@@ -5,7 +5,8 @@ import 'react-slideshow-image/dist/styles.css';
 
 import Slideshow from "./../components/Slideshow";
 import Nav from "./../components/Nav";
-import Feat from "./../components/Feat";
+import News from "./News";
+import Creators from "./Creators";
 import img1 from "./../img/slide_1.jpg";
 import img2 from "./../img/slide_2.jpg";
 import img3 from "./../img/slide_3.jpg";
@@ -40,10 +41,8 @@ class Home extends React.Component {
             <div style={{ overflow: "hidden" }}>
                 <HomeDisplay />
                 <Nav />
-                <div style={{ margin: 100 }}>
-                    <h2> <b> Featured </b></h2>
-                </div>
-                <Feat />
+                <News />
+                <Creators />
                 <div style={{ height: "100vh" }}>
                 </div>
             </div>
