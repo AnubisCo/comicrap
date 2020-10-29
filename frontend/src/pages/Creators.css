@@ -1,8 +1,6 @@
 .creator-card-list {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: scroll;
-    height: 50vh;
 }
 .creator-card {
     display: inline-block;

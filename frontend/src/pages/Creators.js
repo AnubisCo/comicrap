@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './../img/logo.png';
+import logo from './../img/ZacharyMorrison.jpg';
 import './Creators.css';
 
 function CreatorCard(props) {
@@ -22,13 +22,18 @@ function CreatorCard(props) {
 
 export default function Creators(props) {
     return (
-        <div className="container">
+        <div>
             <br />
-            <h2 style={{ textAlign: "right" }}>
-                Creators
-            </h2>
+            <div className="container">
+                <h2 style={{ textAlign: "right" }}>
+                    Creators
+                </h2>
+            </div>
             <br />
             <div className="creator-card-list">
+                <CreatorCard />
+                <CreatorCard />
+                <CreatorCard />
                 <CreatorCard />
                 <CreatorCard />
                 <CreatorCard />
