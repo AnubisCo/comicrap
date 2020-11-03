@@ -1,4 +1,6 @@
-import React, { useState, useCallback, useEffect} from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import Button from "@material-ui/core/Button";
+import Group from '@material-ui/icons/Group';
 import logo from './../img/ZacharyMorrison.jpg';
 import './Creators.css';
 
@@ -6,28 +8,9 @@ const cardItems = [
     {
         id: 1,
         pic: logo,
-        title: "Stacked Card Carousel",
+        title: "zach",
         copy:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet dui scelerisque, tempus dui non, blandit nulla. Etiam sed interdum est."
-    },
-    {
-        id: 2,
-        pic: logo,
-        title: "Second Item",
-        copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-        id: 3,
-        pic: logo,
-        title: "A Third Card",
-        copy:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet dui scelerisque, tempus dui non, blandit nulla."
-    },
-    {
-        id: 4,
-        pic: logo,
-        title: "Fourth",
-        copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "writer and co-creator of blah blah"
     }
 ];
 
@@ -100,15 +83,27 @@ const CardCarousel = () => {
 
 export default function Creators(props) {
     return (
-        <div>
-            <div className="container">
-                <h2>
-                    Creators
-                </h2>
-            </div>
-            <CardCarousel />
-            <div>
-
+        <div className="container my-5">
+            <br />
+            <h2>
+                Creators
+            </h2>
+            <br />
+            <div className="row">
+                <div className="col-md-6 py-5 my-auto text-center">
+                    <h4>
+                        We love our creators!
+                    </h4>
+                    <p>
+                        here I will place a description for the creator section that will be on both the home and creator page.
+                    </p>
+                    <Button variant="contained" color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        creators
+                    </Button>
+                </div>
+                <div style={{ height: "500px" }} className="col-md-6 py-5">
+                    <CardCarousel />
+                </div>
             </div>
         </div>
     );

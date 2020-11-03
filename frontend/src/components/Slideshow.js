@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Button from "@material-ui/core/Button";
 import "./Slideshow.css";
 
 export default function Slideshow({ images = [], interval = 3000, isHome = true }) {
@@ -38,15 +39,21 @@ export default function Slideshow({ images = [], interval = 3000, isHome = true 
     }
 
     return (
-        <section className="slideshow">
+        <section className={isHome ? "slideshowHome" : "slideshow"}>
             <div className="slide-holder">
-                <section className="slide current-slide">
-                    <div style={currentSlideStyle} className="slide-thumbnail"></div>
+                <section className={isHome ? "slide current-slide" : "slide"}>
+                    <div style={currentSlideStyle} className="slide-thumbnail">
+
+                    </div>
                 </section>
-            </div>
-            <div className={isHome ? "invis" : "slideshow-controller"}>
-                <span onClick={previous}>Previous</span>
-                <span onClick={next}>Next</span>
+                <div className={isHome ? "invis" : "slideshow-controller"}>
+                    <Button onClick={previous} variant="contained" color="default">
+                        prev
+                    </Button>
+                    <Button onClick={next} variant="contained" color="default">
+                        next
+                    </Button>
+                </div>
             </div>
         </section>
     )
