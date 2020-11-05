@@ -10,6 +10,7 @@ import img5 from "./../img/slide_5.jpg";
 
 const imgs = [img1, img2, img3, img4, img5];
 const articles = [{
+    id: 0,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
@@ -17,6 +18,7 @@ const articles = [{
     time: "2:22pm"
 },
 {
+    id: 1,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
@@ -24,6 +26,7 @@ const articles = [{
     time: "2:22pm"
 },
 {
+    id: 2,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
@@ -31,6 +34,7 @@ const articles = [{
     time: "2:22pm"
 },
 {
+    id: 3,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
@@ -38,6 +42,7 @@ const articles = [{
     time: "2:22pm"
 },
 {
+    id: 4,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",

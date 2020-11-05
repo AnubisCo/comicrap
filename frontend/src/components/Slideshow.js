@@ -3,14 +3,15 @@ import IButton from "@material-ui/core/IconButton";
 import Prev from "@material-ui/icons/NavigateBefore";
 import Next from "@material-ui/icons/NavigateNext";
 import "./Slideshow.css";
+// https://dev.to/cesareferrari/passing-state-through-the-props-object-in-react-5fmm
 
-export default function Slideshow({ images = [], interval = 3000, location = "", articles = [{ title: "", img: null, body: "", author: "", time: "" }] }) {
+export default function Slideshow({ images = [], interval = 3000, location = "", articles = [] }) {
     const [thumbnails, setThumnails] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentSlideStyle, setCurrentSlideStyle] = useState({});
 
     let isHome = null;
-    if (location == "home") {
+    if (location === "home") {
         isHome = true;
     } else {
         isHome = false;
@@ -53,7 +54,7 @@ export default function Slideshow({ images = [], interval = 3000, location = "",
                 <section className={isHome ? "slide current-slide" : "slide"}>
                     <div style={currentSlideStyle} className="slide-thumbnail">
                         <div className={isHome ? "invis" : "article"}>
-                            {articles.title}
+                            {articles[currentSlide].id}
                         </div>
                     </div>
                 </section>
