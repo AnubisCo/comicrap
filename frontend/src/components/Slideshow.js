@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
-import Button from "@material-ui/core/Button";
+import IButton from "@material-ui/core/IconButton";
+import Prev from "@material-ui/icons/NavigateBefore";
+import Next from "@material-ui/icons/NavigateNext";
 import "./Slideshow.css";
 
-export default function Slideshow({ images = [], interval = 3000, isHome = true }) {
+export default function Slideshow({ images = [], interval = 3000, location = "", articles = [{ title: "", img: null, body: "", author: "", time: "" }] }) {
     const [thumbnails, setThumnails] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentSlideStyle, setCurrentSlideStyle] = useState({});
+
+    let isHome = null;
+    if (location == "home") {
+        isHome = true;
+    } else {
+        isHome = false;
+    }
 
     useEffect(() => {
         setThumnails(images);
@@ -43,18 +52,20 @@ export default function Slideshow({ images = [], interval = 3000, isHome = true 
             <div className="slide-holder">
                 <section className={isHome ? "slide current-slide" : "slide"}>
                     <div style={currentSlideStyle} className="slide-thumbnail">
-
+                        <div className={isHome ? "invis" : "article"}>
+                            {articles.title}
+                        </div>
                     </div>
                 </section>
                 <div className={isHome ? "invis" : "slideshow-controller"}>
-                    <Button onClick={previous} variant="contained" color="default">
-                        prev
-                    </Button>
-                    <Button onClick={next} variant="contained" color="default">
-                        next
-                    </Button>
+                    <IButton onClick={previous} variant="contained" color="primary">
+                        <Prev fontSize="large" />
+                    </IButton>
+                    <IButton onClick={next} variant="contained" color="primary">
+                        <Next fontSize="large" />
+                    </IButton>
                 </div>
             </div>
         </section>
     )
-}   
+}

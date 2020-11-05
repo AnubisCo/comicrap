@@ -11,6 +11,20 @@ const cardItems = [
         title: "zach",
         copy:
             "writer and co-creator of blah blah"
+    },
+    {
+        id: 2,
+        pic: logo,
+        title: "zach",
+        copy:
+            "writer and co-creator of blah blah"
+    },
+    {
+        id: 3,
+        pic: logo,
+        title: "zach",
+        copy:
+            "writer and co-creator of blah blah"
     }
 ];
 

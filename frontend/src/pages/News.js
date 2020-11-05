@@ -1,5 +1,7 @@
 import React from "react";
 import Slideshow from "./../components/Slideshow";
+import Button from "@material-ui/core/Button";
+import Announcement from "@material-ui/icons/Announcement";
 import img1 from "./../img/slide_1.jpg";
 import img2 from "./../img/slide_2.jpg";
 import img3 from "./../img/slide_3.jpg";
@@ -7,6 +9,42 @@ import img4 from "./../img/slide_4.jpg";
 import img5 from "./../img/slide_5.jpg";
 
 const imgs = [img1, img2, img3, img4, img5];
+const articles = [{
+    title: "some random article",
+    img: null,
+    body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
+    author: "zachary morrison",
+    time: "2:22pm"
+},
+{
+    title: "some random article",
+    img: null,
+    body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
+    author: "zachary morrison",
+    time: "2:22pm"
+},
+{
+    title: "some random article",
+    img: null,
+    body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
+    author: "zachary morrison",
+    time: "2:22pm"
+},
+{
+    title: "some random article",
+    img: null,
+    body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
+    author: "zachary morrison",
+    time: "2:22pm"
+},
+{
+    title: "some random article",
+    img: null,
+    body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
+    author: "zachary morrison",
+    time: "2:22pm"
+}
+];
 
 export default function Feat(props) {
     return (
@@ -16,8 +54,21 @@ export default function Feat(props) {
                 News
             </h2>
             <br />
-            <div style={{ height: "40vh", width: "100%" }}>
-                <Slideshow interval={6000} images={imgs} isHome={false} />
+            <div className="row">
+                <div style={{ height: "40vh" }} className="col-lg-6 my-auto py-5">
+                    <Slideshow articleArray={articles} interval={6000} images={imgs} />
+                </div>
+                <div className="col-lg-6 my-auto p-5 text-center">
+                    <h4>
+                        Stay up to date!
+                    </h4>
+                    <p>
+                        here I will place a description for the news section that will be on both the home and news page.
+                    </p>
+                    <Button variant="contained" color="primary" startIcon={<Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                        news
+                    </Button>
+                </div>
             </div>
         </div>
     );

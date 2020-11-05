@@ -7,6 +7,7 @@ import Slideshow from "./../components/Slideshow";
 import Nav from "./../components/Nav";
 import News from "./News";
 import Creators from "./Creators";
+import Comics from "./Comics";
 import img1 from "./../img/slide_1.jpg";
 import img2 from "./../img/slide_2.jpg";
 import img3 from "./../img/slide_3.jpg";
@@ -18,7 +19,7 @@ const imgs = [img1, img2, img3, img4, img5];
 function HomeDisplay(props) {
     return (
         <div id="top" style={{ position: "relative", height: "60vh", padding: "0", margin: "0", backgroundColor: "black", zIndex: "-2" }}>
-            <Slideshow images={imgs} />
+            <Slideshow location="home" images={imgs} />
             <div style={{ position: "absolute", height: "100%", width: "100%", backgroundColor: "black", zIndex: "-1", opacity: "0.7" }}></div>
             <div className="container" style={{ zIndex: "10", }}>
                 <h1 style={{ color: "white", paddingTop: "30vh", margin: "0" }}>
@@ -43,6 +44,7 @@ class Home extends React.Component {
                 <Nav />
                 <News />
                 <Creators />
+                <Comics />
                 <div style={{ height: "100vh" }}>
                 </div>
             </div>

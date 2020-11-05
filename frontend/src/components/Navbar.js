@@ -1,7 +1,7 @@
 import React from "react";
 import { Squeeze as Hamburger } from "hamburger-react";
 import Button from "@material-ui/core/Button";
-import { Announcement, Group, MenuBook, Storefront } from '@material-ui/icons';
+import { Announcement, Group, MenuBook, Storefront } from "@material-ui/icons";
 import line from "./../img/line.png";
 import logo from "./../img/logo.png";
 import Login from "./Login";
