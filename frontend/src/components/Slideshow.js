@@ -3,12 +3,38 @@ import IButton from "@material-ui/core/IconButton";
 import Prev from "@material-ui/icons/NavigateBefore";
 import Next from "@material-ui/icons/NavigateNext";
 import "./Slideshow.css";
-// https://dev.to/cesareferrari/passing-state-through-the-props-object-in-react-5fmm
 
-export default function Slideshow({ images = [], interval = 3000, location = "", articles = [] }) {
+const Article = (props) => {
+    if (props.show) {
+        return (
+            <div className="article container px-5">
+                <h4>
+                    {props.article.title}
+                </h4>
+                <h6>
+                    {props.article.author}
+                </h6>
+                <small>
+                    {props.article.date}
+                </small>
+                <p>
+                    {props.article.body}
+                </p>
+            </div>
+        );
+    } else {
+        return (
+            <div className="invis">
+            </div>
+        );
+    }
+}
+
+export default function Slideshow({ articleArray = [{ title: "", img: null, body: "", author: "", date: "" }], images = [], interval = 3000, location = "" }) {
     const [thumbnails, setThumnails] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentSlideStyle, setCurrentSlideStyle] = useState({});
+    const articles = articleArray;
 
     let isHome = null;
     if (location === "home") {
@@ -53,9 +79,7 @@ export default function Slideshow({ images = [], interval = 3000, location = "",
             <div className="slide-holder">
                 <section className={isHome ? "slide current-slide" : "slide"}>
                     <div style={currentSlideStyle} className="slide-thumbnail">
-                        <div className={isHome ? "invis" : "article"}>
-                            {articles[currentSlide].id}
-                        </div>
+                        <Article article={articles[currentSlide]} show={!isHome} />
                     </div>
                 </section>
                 <div className={isHome ? "invis" : "slideshow-controller"}>

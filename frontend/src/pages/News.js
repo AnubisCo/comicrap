@@ -10,48 +10,43 @@ import img5 from "./../img/slide_5.jpg";
 
 const imgs = [img1, img2, img3, img4, img5];
 const articles = [{
-    id: 0,
     title: "some random article",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
     author: "zachary morrison",
-    time: "2:22pm"
+    date: "2:22pm"
 },
 {
-    id: 1,
-    title: "some random article",
+    title: "some random 1",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
     author: "zachary morrison",
-    time: "2:22pm"
+    date: "2:22pm"
 },
 {
-    id: 2,
-    title: "some random article",
+    title: "some random 2",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
     author: "zachary morrison",
-    time: "2:22pm"
+    date: "2:22pm"
 },
 {
-    id: 3,
-    title: "some random article",
+    title: "some random 3",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
     author: "zachary morrison",
-    time: "2:22pm"
+    date: "2:22pm"
 },
 {
-    id: 4,
-    title: "some random article",
+    title: "some random 4",
     img: null,
     body: "blah blah blah sdkfjas dsdfa sdfaga asdf gasd gas dfa sdgasdg asd gasdf ag ghwae g asdf asd.",
     author: "zachary morrison",
-    time: "2:22pm"
+    date: "2:22pm"
 }
 ];
 
-export default function Feat(props) {
+export default function News(props) {
     return (
         <div className="container my-5">
             <br />
@@ -60,7 +55,7 @@ export default function Feat(props) {
             </h2>
             <br />
             <div className="row">
-                <div style={{ height: "40vh" }} className="col-lg-6 my-auto py-5">
+                <div style={{ height: "50vh" }} className="col-lg-6 my-auto p-5">
                     <Slideshow articleArray={articles} interval={6000} images={imgs} />
                 </div>
                 <div className="col-lg-6 my-auto p-5 text-center">

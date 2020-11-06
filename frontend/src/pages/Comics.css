@@ -1,0 +1,4 @@
+.comic > img {
+    max-height: 570px;
+    max-width: 100%;
+}
