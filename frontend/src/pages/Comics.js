@@ -31,7 +31,7 @@ function Comic({ comic = { series: "", series_img: null, issue: 0 } }) {
             <h2 className="mt-5">
                 {comic.series}
             </h2>
-            <Button color="light" className="mb-5" variant="contained">
+            <Button color="primary" className="mb-5" variant="contained">
                 see more...
             </Button>
         </div>
@@ -51,9 +51,8 @@ export default function Comics() {
                     <div key={i} className="col-md-4 mx-auto">
                         <Comic comic={comic} />
                     </div>
-                ))} 
+                ))}
             </div>
         </div>
     );
 }
-
