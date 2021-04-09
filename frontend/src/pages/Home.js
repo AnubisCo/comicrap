@@ -45,8 +45,6 @@ class Home extends React.Component {
                 <News />
                 <Creators />
                 <Comics />
-                <div style={{ height: "100vh" }}>
-                </div>
             </div>
         );
     }

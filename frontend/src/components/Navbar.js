@@ -28,7 +28,7 @@ function Navbar(props) {
             handleMediaQueryChange(mediaQuery)
         };
     }, [isSmallScreen]);
-    const Logo = (props) => (
+    const Logo = () => (
         <div style={{ marginTop: "10px" }}>
             <a href={props.href}>
                 <img src={props.src} className={props.class} alt={props.alt} />
