@@ -15,8 +15,8 @@ function Login() {
 
   return (
     <div>
-      <IconButton variant="contained" color="primary" onClick={handleShow} aria-label="account">
-        <AccountCircleIcon style={{ fontSize: "2rem" }} />
+      <IconButton className="nav-icon" variant="contained" onClick={handleShow} aria-label="account">
+        <AccountCircleIcon style={{ fontSize: "1.75rem" }} />
       </IconButton>
       <Modal
         show={show}

@@ -1,12 +1,20 @@
 .navbar-sticky {
-  position: fixed!important;
-  box-shadow: 0.01rem 0.01rem 0.5rem black;
-  z-index: 100;
-  top: 0;
-  left: 0;
+    position: fixed!important;
+    box-shadow: 0.01rem 0.01rem 0.1rem black;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.nav-icon {
+    color: black!important;
 }
 .nav-icon:hover {
     cursor: pointer;
+}
+.nav-button-text {
+    color: black;
+    font-weight: bold;
+    text-orientation: sideways;
 }
 .line {
     position: absolute;
@@ -15,9 +23,10 @@
 }
 .logo {
     max-width: 70%;
-    max-height: 3rem;
+    max-height: 3.5rem;
 }
 .nav {
+    background-color: white;
     margin-top: 10px;
     grid-area: nav;
     display: grid;
@@ -28,7 +37,6 @@
 .nav > a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: black;
 }
 .header {
     background-color: white;

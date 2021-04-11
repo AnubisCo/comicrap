@@ -28,7 +28,7 @@ function Navbar(props) {
             handleMediaQueryChange(mediaQuery)
         };
     }, [isSmallScreen]);
-    const Logo = () => (
+    const Logo = (props) => (
         <div style={{ marginTop: "10px" }}>
             <a href={props.href}>
                 <img src={props.src} className={props.class} alt={props.alt} />
@@ -44,22 +44,22 @@ function Navbar(props) {
                 <nav className="nav my-auto">
                     <a href="/news">
                         <Button color="primary" startIcon={<Announcement className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
-                            news
-                        </Button>
-                    </a>
-                    <a href="/creators">
-                        <Button color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
-                            creators
+                            <span className="nav-button-text">news</span>
                         </Button>
                     </a>
                     <a href="/comics">
                         <Button color="primary" startIcon={<MenuBook className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
-                            comics
-                        </Button>
+                            <span className="nav-button-text">comics</span>
+                        </Button> 
                     </a>
                     <a href="/merch">
                         <Button color="primary" startIcon={<Storefront className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
-                            market
+                            <span className="nav-button-text">merch</span>
+                        </Button>
+                    </a>
+                    <a href="/creators">
+                        <Button color="primary" startIcon={<Group className="nav-icon" style={{ fontSize: "1.5rem" }} />} >
+                            <span className="nav-button-text">creators</span>
                         </Button>
                     </a>
                     <Login />
