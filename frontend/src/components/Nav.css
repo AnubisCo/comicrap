@@ -1,6 +1,12 @@
+.invis {
+    display: none;
+}
+.header-spacing-adjuster {
+    height: 4rem;
+}
 .navbar-sticky {
     position: fixed!important;
-    box-shadow: 0.01rem 0.01rem 0.1rem black;
+    box-shadow: 0.01rem 0.05rem black;
     z-index: 100;
     top: 0;
     left: 0;
@@ -26,13 +32,18 @@
     max-height: 3.5rem;
 }
 .nav {
+    width: 100vw;
     background-color: white;
-    margin-top: 10px;
+    box-shadow: 0.01rem 0.1rem black;
     grid-area: nav;
     display: grid;
     grid-template-columns: repeat(5, auto);
     align-items: center;
     justify-items: center;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: 100;
 }
 .nav > a {
     font-size: 1.5rem;
@@ -44,6 +55,7 @@
     width: 100%;
     display: grid;
     grid-template-areas: "logo nav";
+    z-index: 101;
 }
 .toggleDiv {
     display: none;
@@ -61,7 +73,7 @@
     .toggleDiv {
         position: absolute!important;
         height: 100%;
-        right: 0px;
+        right: 0;
         top: 0;
         grid-area: toggleDiv;
         display: block;
