@@ -77,7 +77,7 @@ export default function News(props) {
                         </div>
                     </div>
                 </div>
-                <div style={{ height: "50vh" }} className="col-lg-6 my-auto p-5">
+                <div className="col-lg-6 my-auto p-5">
                     <Slideshow articleArray={articles} interval={6000} images={imgs} />
                 </div>
             </div>
