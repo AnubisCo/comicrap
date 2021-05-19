@@ -33,7 +33,6 @@ const Article = (props) => {
 export default function Slideshow({ articleArray = [{ title: "", img: null, body: "", author: "", date: "" }], images = [], interval = 3000, location = "" }) {
     const [thumbnails, setThumnails] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [currentSlideStyle, setCurrentSlideStyle] = useState({});
     const articles = articleArray;
 
     let isHome = null;
@@ -45,9 +44,6 @@ export default function Slideshow({ articleArray = [{ title: "", img: null, body
 
     useEffect(() => {
         setThumnails(images);
-        setCurrentSlideStyle({
-            backgroundImage: "url('" + images[currentSlide] + "')"
-        });
         const loop = setInterval(() => {
             if (currentSlide === images.length - 1) {
                 setCurrentSlide(0);
@@ -78,15 +74,14 @@ export default function Slideshow({ articleArray = [{ title: "", img: null, body
         <section className={isHome ? "slideshowHome" : "slideshow"}>
             <div className="slide-holder">
                 <section className={isHome ? "slide current-slide" : "slide"}>
-                    <div style={currentSlideStyle} className="slide-thumbnail">
-                        <Article article={articles[currentSlide]} show={!isHome} />
-                    </div>
+                    <img alt="news thumbnail" src={thumbnails[currentSlide]} className={isHome ? "slide-bg" : "slide-thumbnail px-5"} />
+                    <Article article={articles[currentSlide]} show={!isHome} />
                 </section>
                 <div className={isHome ? "invis" : "slideshow-controller"}>
-                    <IButton onClick={previous} variant="contained" color="primary">
+                    <IButton onClick={previous} variant="contained">
                         <Prev fontSize="large" />
                     </IButton>
-                    <IButton onClick={next} variant="contained" color="primary">
+                    <IButton onClick={next} variant="contained">
                         <Next fontSize="large" />
                     </IButton>
                 </div>
