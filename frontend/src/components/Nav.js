@@ -22,7 +22,7 @@ function Nav(props) {
     return (
         <header ref={ref}>
             <div className={isSticky ? "header-spacing-adjuster" : "invis"}></div>
-            <div className={isSticky ? "navbar-sticky header mb-3 pl-2" : "header mb-3 pl-2"}>
+            <div className={isSticky ? "navbar-sticky header pl-1" : "header pl-1"}>
                 <Navbar />
             </div>
         </header>
