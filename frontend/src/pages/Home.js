@@ -37,11 +37,11 @@ function HomeDisplay(props) {
     ]
     return (
         <>
-            <svg width="100vw" height="100vh" style={{ overflow: "visible", zIndex: 0, position: "absolute", backgroundColor: "#121211"}}>
+            <svg width="100%" height="100%" style={{ zIndex: 0, position: "absolute", backgroundColor: "#121211"}}>
                 <motion.g initial={variants[0]} animate={variants.slice(1)} variants={variants} style={{ overflow: "visible" }}>
                     <circle id="sun" stroke="#bdf881" fill="#1179cc" strokeWidth="1%" r="75px" />
-                    <text width="100%" style={{ transform: "translate3d(0,0,0);", color: "white"}} alignmentBaseline="top" xlinkHref="#sun">
-                        <textPath>
+                    <text width="100%" style={{ color: "white"}} alignmentBaseline="top">
+                        <textPath xlinkHref="#sun">
                             weseethesun.com
                         </textPath>
                     </text>
