@@ -5,8 +5,7 @@ import 'react-slideshow-image/dist/styles.css';
 import { motion } from "framer-motion";
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Button from "@material-ui/core/Button";
-
-import Carousel from "./../components/Slideshow";
+import { Carousel } from "react-responsive-carousel";
 
 //  importing styles
 import "./Home.css";
@@ -34,6 +33,23 @@ function HomeDisplay(props) {
         { opacity: 0 },
         { opacity: 1, transition: { delay: 2.5, duration: 0.5 } }
     ]
+    const colors = ["#1179cc", "#bdf881"];
+    const HomeCarousel = (props) => {
+        return (
+            <Carousel showThumbs={false} autoplay>
+                {
+                    props.imgs.map((img) => {
+                        return (
+                            <div key={props.imgs.indexOf(img) + 1}>
+                                <img style={{maxHeight: "100%"}} src={img} alt="carousel" />
+                                <p className="legend">Legend {props.imgs.indexOf(img) + 1}</p>
+                            </div>
+                        )
+                    })
+                }
+            </Carousel>
+        );
+    }
     return (
         <>
             <svg width="100%" height="100%" style={{ zIndex: 0, position: "absolute", backgroundColor: "black"}}>
@@ -45,14 +61,14 @@ function HomeDisplay(props) {
                         </textPath>
                     </text>
                     <svg x="-77.5">
-                        <path stroke="#1179cc" fill="#bdf881" viewBox="0 0 155 205" strokeWidth="1%" d="M 5 155 L 80 5 155 155 80 205 Z"/>
+                        <path stroke={colors[0]} fill={colors[1]} viewBox="0 0 155 205" strokeWidth="1%" d="M 5 155 L 80 5 155 155 80 205 Z"/>
                     </svg>
                 </motion.g>
             </svg>
             <motion.div initial={fade_variants[0]} animate={fade_variants.slice(1)} style={{ position: "absolute", display: "flex", justifyContent: "center", width: "100%", height: "100%"}}>
                 <div className="ml-5 pl-5 text-center" style={{ position: "absolute", top: "25%" }}>
                     <h1 style={{ color: "white", fontSize: "3.5rem", fontWeight: "bolder" }}>Anubis Corp</h1>
-                    <h3 style={{ color: "#bdf881" }}>deadly innovative</h3>
+                    <h3 style={{ color: colors[1] }}>deadly innovative</h3>
                     <Button className="mt-5 p-2" style={{ backgroundColor: "white", outline: "none", fontSize: "1.25rem", textTransform: "none", fontWeight: "bold", border: "5px solid #1179cc", color: "#1179cc", borderRadius: "0" }}>
                         Support the Creators
                     </Button>
@@ -72,8 +88,8 @@ function HomeDisplay(props) {
                         <a href="www.google.com">
                             <h1>news</h1>
                         </a>
-                        <div className="w-100">
-                            <Carousel location="home" images={img_array} />
+                        <div style={{ width: "100%", padding: "10%"}}>
+                            <HomeCarousel imgs={img_array} />
                         </div>
                     </div>
                 </motion.div>

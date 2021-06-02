@@ -1,7 +1,0 @@
-.comic > img {
-    max-width: 100%;
-    box-shadow: 1px 1px 3px;
-}
-.comic > img:hover {
-    box-shadow: 5px 5px 10px;
-}
