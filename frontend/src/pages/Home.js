@@ -72,7 +72,7 @@ function HomeDisplay(props) {
                         <a href="www.google.com">
                             <h1>news</h1>
                         </a>
-                        <div>
+                        <div className="w-100">
                             <Carousel location="home" images={img_array} />
                         </div>
                     </div>

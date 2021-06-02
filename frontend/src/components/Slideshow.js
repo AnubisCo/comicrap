@@ -73,7 +73,7 @@ export default function Slideshow({ articleArray = [{ title: "", img: null, body
     return (
         <section className={isHome ? "slideshowHome" : "slideshow"}>
             <div className="slide-holder">
-                <section className={isHome ? "slide current-slide" : "slide"}>
+                <section className="slide current-slide">
                     <img alt="news thumbnail" src={thumbnails[currentSlide]} className={isHome ? "slide-bg" : "slide-thumbnail px-5"} />
                     <Article article={articles[currentSlide]} show={!isHome} />
                 </section>
