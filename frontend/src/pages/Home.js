@@ -5,6 +5,7 @@ import 'react-slideshow-image/dist/styles.css';
 import { motion } from "framer-motion";
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Button from "@material-ui/core/Button";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 //  importing styles
@@ -88,7 +89,7 @@ function HomeDisplay(props) {
                         <a href="www.google.com">
                             <h1>news</h1>
                         </a>
-                        <div style={{ width: "100%", padding: "10%"}}>
+                        <div style={{ width: "100%", maxHeight: "150px", padding: "10%"}}>
                             <HomeCarousel imgs={img_array} />
                         </div>
                     </div>
