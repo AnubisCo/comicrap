@@ -81,15 +81,19 @@ function HomeDisplay(props) {
             <motion.div initial={hill_variants[0]} animate={hill_variants.slice(1)} variants={hill_variants} style={{ zIndex: 2 }}>
                 <motion.div initial={fade_variants[0]} animate={fade_variants.slice(1)} className="row h-100 w-100" style={{ display: "flex", alignItems: "center", justifyItems: "center", margin: "0"}}>
                     <div className="col-6 h-100 pt-5 px-0 text-center">
-                        <a href="www.google.com">
-                            <h1>our work</h1>
-                        </a>
+                        <h1>
+                            <a href="www.google.com">
+                                our work
+                            </a>
+                        </h1>
                     </div>
                     <div className="col-6 h-100 pt-5 px-0 text-center overflow-hidden">
-                        <a href="www.google.com">
-                            <h1>news</h1>
-                        </a>
-                        <div style={{ width: "100%", maxHeight: "150px", padding: "10%"}}>
+                        <h1>
+                            <a href="www.google.com">
+                                news
+                            </a>
+                        </h1>
+                        <div style={{ width: "100%", maxHeight: "150px", paddingLeft: "5%", paddingRight: "5%" }}>
                             <HomeCarousel imgs={img_array} />
                         </div>
                     </div>
