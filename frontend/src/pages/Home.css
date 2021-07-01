@@ -5,9 +5,21 @@
     width: 100%; 
     height: 100%;
 }
-.card-img-top {
-    max-height: 200px;
-    width: auto;
+.portrait-img {
+    max-width: 100%;
+}
+.founders {
+    height: 150px;
+}
+.founders > h5 {
+    display: block;
+    width: 100%;
+}
+.founders > h5:first-child {
+    text-align: left;
+}
+.founders > h5:last-child {
+    text-align: right;
 }
 .support-button {
     font-size: 1.25rem; 
@@ -39,6 +51,7 @@
 }
 .aboutus {
     display: none;
+    color: #031635;
 }
 @media only screen and (min-width: 600px) {
     .home-video-container {
@@ -67,7 +80,16 @@
         width: 40%;
         height: 100%;
         z-index: 1;
-        background-color: white;
+    }
+    .divider {
+        display: block;
+        position: absolute;
+        right: 0;
+        border-bottom: 100vh solid #E8DDCB;
+        border-left: 5vw solid transparent;
+        width: 45vw;
+        height: 0;
+
     }
 }
 @media only screen and (min-width: 1800px) {
