@@ -12,7 +12,7 @@ import "./Home.css";
 
 //  importing sample images
 // import img from "./../img/Sun.png";
-// import img1 from "./../img/slide_1.jpg";
+import img1 from "./../img/slide_1.jpg";
 // import img2 from "./../img/slide_2.jpg";
 // import img3 from "./../img/slide_3.jpg";
 // import img4 from "./../img/slide_4.jpg";
@@ -50,20 +50,15 @@ function HomeDisplay(props) {
     // }
     return (
         <>
-            <svg width="100%" height="100%" style={{ zIndex: 0, position: "absolute", backgroundColor: colors[4] }}>
+            <svg className="home-svg" width="100%" height="100%" style={{ zIndex: 0, position: "absolute", backgroundColor: colors[4] }}>
                 <motion.g initial={variants[0]} animate={variants.slice(1)} variants={variants} style={{ overflow: "visible" }}>
                     <circle id="sun" stroke={colors[1]} fill={colors[4]} strokeWidth="1%" r="75px" />
-                    <text width="100%" style={{ color: "white"}} alignmentBaseline="top">
-                        <textPath xlinkHref="#sun">
-                            weseethesun.com
-                        </textPath>
-                    </text>
                     <svg x="-77.5">
                         <path stroke={colors[4]} fill={colors[1]} viewBox="0 0 155 205" strokeWidth="1%" d="M 5 155 L 80 5 155 155 80 205 Z"/>
                     </svg>
                 </motion.g>
             </svg>
-            <motion.div className="title" initial={fade_variants[0]} animate={fade_variants.slice(1)}>
+            <motion.div className="title-and-button" initial={fade_variants[0]} animate={fade_variants.slice(1)}>
                 <div className="ml-5 pl-5 text-center" style={{ position: "absolute", top: "25%" }}>
                     <h1 className="company" style={{ color: colors[5] }}>
                         Anubis
@@ -78,8 +73,34 @@ function HomeDisplay(props) {
             </motion.div>
             <motion.div initial={fade_variants[0]} animate={fade_variants.slice(1)}>
                 <HelpOutlineIcon className="aboutus-button" variant="contained" style={{ color: colors[4], backgroundColor: colors[1], fontSize: "5rem" }} />
-                <div>
-                    
+                <div className="aboutus">
+                    <h1 className="text-center my-3">
+                        About Us
+                    </h1>
+                    <div className="row mx-0 w-100">
+                        <div className="col-6 px-0">
+                            <div className="card-body text-center p-0">
+                                <img className="card-img-top" src={img1} alt="portrait" />
+                                <h5 className="card-title">
+                                    card title
+                                </h5>
+                                <p className="card-text">
+                                    example text
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-6 px-0">
+                            <div className="card-body p-0 text-center">
+                                <img className="card-img-top" src={img1} alt="portrait" />
+                                <h5 className="card-title">
+                                    card title
+                                </h5>
+                                <p className="card-text">
+                                    example text
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
             <motion.div className="home-video-container" initial={fade_variants[0]} animate={fade_variants.slice(1)}>
