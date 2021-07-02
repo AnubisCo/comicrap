@@ -10,6 +10,9 @@
 }
 .founders {
     height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .founders > h5 {
     display: block;
@@ -74,18 +77,20 @@
         width: 60%;
     }
     .aboutus {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         position: absolute;
         right: 0;
         width: 40%;
-        height: 100%;
+        height: 85%;
         z-index: 1;
     }
     .divider {
         display: block;
         position: absolute;
         right: 0;
-        border-bottom: 100vh solid #E8DDCB;
+        border-bottom: 100vh solid #b380cd;
         border-left: 5vw solid transparent;
         width: 45vw;
         height: 0;

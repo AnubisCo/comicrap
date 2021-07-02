@@ -80,15 +80,15 @@ function HomeDisplay(props) {
                             <h5>
                                 Zachary Morrison, CTO
                             </h5>
-                            <h5 className="mt-4">
+                            <h5>
                                 Josyah Morrison, CCO
                             </h5>
                         </div>
                         <div className="col-3 px-0">
-                            <img className="portrait-img" src={img1} alt="portrait" />
                             <p className="text-center">
                                 random quote
                             </p>
+                            <img className="portrait-img" src={img1} alt="portrait" />
                         </div>
                     </div>
                     <div className="mt-3">
@@ -103,13 +103,13 @@ function HomeDisplay(props) {
                     </div>
                     <div className="row mx-0 mt-3">
                         <div className="col-4 px-0">
-                            <img className="portrait-img" src={img2} alt="portrait"/>
+                            <img className="portrait-img p-1" src={img2} alt="portrait"/>
                         </div>
                         <div className="col-4 px-0">
-                            <img className="portrait-img" src={img2} alt="portrait"/>
+                            <img className="portrait-img p-1" src={img2} alt="portrait"/>
                         </div>
                         <div className="col-4 px-0">
-                            <img className="portrait-img" src={img2} alt="portrait"/>
+                            <img className="portrait-img p-1" src={img2} alt="portrait"/>
                         </div>
                     </div>
                 </div>
